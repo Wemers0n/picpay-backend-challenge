@@ -1,6 +1,7 @@
 package com.example.picpay_backend_challenge.domain.transaction;
 
 import com.example.picpay_backend_challenge.domain.user.User;
+import com.example.picpay_backend_challenge.dtos.TransactionDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +21,7 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private BigDecimal amount;
     @ManyToOne
     @JoinColumn(name = "sender_id")
@@ -29,4 +30,5 @@ public class Transaction {
     @JoinColumn(name = "receiver_id")
     private User receiver;
     private LocalDateTime timestamp;
+
 }
