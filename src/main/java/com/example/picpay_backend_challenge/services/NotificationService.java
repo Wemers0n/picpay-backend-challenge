@@ -14,7 +14,7 @@ public class NotificationService {
 
     public void sendNotification(User user, String message){
         String email = user.getEmail();
-        NotificationDTO notificationRequest = new NotificationDTO(email, message);
-        System.out.println("notification sent to the user");
+        NotificationDTO notification = new NotificationDTO(email, message);
+//        System.out.println(notification);
     }
 }
