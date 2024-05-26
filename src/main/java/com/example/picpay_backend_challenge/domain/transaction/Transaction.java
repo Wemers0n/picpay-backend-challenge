@@ -1,7 +1,6 @@
 package com.example.picpay_backend_challenge.domain.transaction;
 
 import com.example.picpay_backend_challenge.domain.user.User;
-import com.example.picpay_backend_challenge.dtos.TransactionDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
