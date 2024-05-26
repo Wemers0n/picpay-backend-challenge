@@ -1,4 +1,4 @@
-package com.example.picpay_backend_challenge.exception;
+package com.example.picpay_backend_challenge.exception.user;
 
 public class UserNotFoundException extends RuntimeException{
 
