@@ -1,5 +1,6 @@
 package com.example.picpay_backend_challenge.domain.user;
 
+import com.example.picpay_backend_challenge.dtos.request.UserRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,4 +29,14 @@ public class User {
     private BigDecimal balance;
     @Enumerated(EnumType.STRING)
     private UserType userType;
+
+    public User(UserRequestDTO dto){
+        this.firstName = dto.firstName();
+        this.lastName = dto.lastName();
+        this.document = dto.document();
+        this.email = dto.email();
+        this.password = dto.password();
+        this.balance = dto.balance();
+        this.userType = dto.userType();
+    }
 }
