@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class TransactionExceptionHandler {
 
     @ExceptionHandler(UnauthorizedTransactionException.class)
-    public ResponseEntity unauthorizedTransactionException(UnauthorizedTransactionException exception){
-        ResponseExceptionDTO responseDTO = new ResponseExceptionDTO(exception.getMessage(), HttpStatus.UNAUTHORIZED);
+    public ResponseEntity<ResponseExceptionDTO> unauthorizedTransactionException(UnauthorizedTransactionException exception){
+        ResponseExceptionDTO responseDTO = new ResponseExceptionDTO(exception.getMessage(), HttpStatus.UNAUTHORIZED.value());
         return new ResponseEntity(responseDTO, HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(InvalidTransactionException.class)
-    public ResponseEntity InvalidTransaction(InvalidTransactionException exception){
-        ResponseExceptionDTO responseDTO = new ResponseExceptionDTO(exception.getMessage(), HttpStatus.BAD_REQUEST);
+    public ResponseEntity<ResponseExceptionDTO> InvalidTransaction(InvalidTransactionException exception){
+        ResponseExceptionDTO responseDTO = new ResponseExceptionDTO(exception.getMessage(), HttpStatus.BAD_REQUEST.value());
         return ResponseEntity.badRequest().body(responseDTO);
     }
 }
